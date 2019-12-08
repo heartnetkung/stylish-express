@@ -1,6 +1,6 @@
 {
   "name": "stylish-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:heartnetkung/stylish-express.git",
   "author": "heartnetkung <heartnetkung@gmail.com>",
