@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+const rootPath = require("app-root-path").path;
+const fs = require("fs-extra");
+const { join } = require("path");
+const { execSync } = require("child-process");
+
+fs.copySync(join(__dirname, "../template/"), rootPath);
+execSync('yarn install')

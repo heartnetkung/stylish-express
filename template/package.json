@@ -1,0 +1,64 @@
+{
+	"name": "wongshare_sv",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:heartnetkung/wongshare_sv.git",
+	"author": "heartnetkung <heartnetkung@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"reset_db_dev": "node scripts/init_db.js all",
+		"reset_index_db_dev": "node scripts/init_db.js index",
+		"test": "jest",
+		"makedoc_staff": "node scripts/makedoc_script.js ./node_staff \"./shared/*\"",
+		"makedoc": "node scripts/makedoc_script.js ./node_app \"./shared/*\"",
+		"start": "nodemon app.js",
+		"production-start": "cross-env NODE_ENV=production pm2 start app.js --name wongshare_sv",
+		"production-stop": "pm2 delete wongshare_sv"
+	},
+	"jest": {
+		"testEnvironment": "node"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged",
+			"pre-push": "jest"
+		}
+	},
+	"prettier": {
+		"useTabs": true
+	},
+	"devDependencies": {
+		"ajv": "^6.10.2",
+		"faker": "^4.1.0",
+		"husky": "^3.0.9",
+		"jest": "^24.9.0",
+		"mongodb": "^3.3.3",
+		"nodemon": "^1.19.4",
+		"prettier": "^1.18.2",
+		"pretty-quick": "2.0.0",
+		"supertest": "^4.0.2",
+		"uuid": "^3.3.3"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"compression": "^1.7.4",
+		"connect-mongo": "^3.1.2",
+		"cookie-parser": "^1.4.4",
+		"cross-env": "^6.0.3",
+		"csv-parser": "^2.3.2",
+		"csv-writer": "^1.5.0",
+		"express": "^4.17.1",
+		"express-async-errors": "^3.1.1",
+		"express-session": "^1.17.0",
+		"express-validator": "^6.2.0",
+		"glob": "^7.1.6",
+		"helmet": "^3.21.2",
+		"http-errors": "~1.6.3",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.15",
+		"mongoose": "^5.7.5",
+		"morgan": "~1.9.1",
+		"pm2": "^4.2.0",
+		"scrypt-nonce-wrapper": "^1.0.0"
+	}
+}
