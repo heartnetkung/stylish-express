@@ -2,7 +2,7 @@
 const rootPath = require("app-root-path").path;
 const fs = require("fs-extra");
 const { join } = require("path");
-const { execSync } = require("child-process");
+const { execSync } = require("child_process");
 
-fs.copySync(join(__dirname, "../template/"), rootPath);
-execSync('yarn install')
+fs.copySync(join(__dirname, "/template/copy/"), rootPath);
+execSync("yarn install", { stdio: ["ignore", "inherit", "inherit"] });
