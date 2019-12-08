@@ -5,6 +5,7 @@
   "repository": "git@github.com:heartnetkung/stylish-express.git",
   "author": "heartnetkung <heartnetkung@gmail.com>",
   "license": "MIT",
+  "bin": "./stylish-express",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "cross-env": "^6.0.3",
